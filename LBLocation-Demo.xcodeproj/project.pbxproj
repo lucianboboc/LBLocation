@@ -22,6 +22,8 @@
 		250E7E8717F384F100B8F1B4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 250E7E8517F384F100B8F1B4 /* InfoPlist.strings */; };
 		250E7E8917F384F100B8F1B4 /* LBLocation_DemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 250E7E8817F384F100B8F1B4 /* LBLocation_DemoTests.m */; };
 		250E7E9417F384FB00B8F1B4 /* LBLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 250E7E9317F384FB00B8F1B4 /* LBLocation.m */; };
+		250E7E9B17F3865900B8F1B4 /* LICENSE.md in Resources */ = {isa = PBXBuildFile; fileRef = 250E7E9917F3865900B8F1B4 /* LICENSE.md */; };
+		250E7E9C17F3865900B8F1B4 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 250E7E9A17F3865900B8F1B4 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +58,8 @@
 		250E7E8817F384F100B8F1B4 /* LBLocation_DemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LBLocation_DemoTests.m; sourceTree = "<group>"; };
 		250E7E9217F384FB00B8F1B4 /* LBLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBLocation.h; sourceTree = "<group>"; };
 		250E7E9317F384FB00B8F1B4 /* LBLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBLocation.m; sourceTree = "<group>"; };
+		250E7E9917F3865900B8F1B4 /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.md; sourceTree = "<group>"; };
+		250E7E9A17F3865900B8F1B4 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +126,8 @@
 				250E7E7317F384F100B8F1B4 /* ViewController.m */,
 				250E7E9217F384FB00B8F1B4 /* LBLocation.h */,
 				250E7E9317F384FB00B8F1B4 /* LBLocation.m */,
+				250E7E9917F3865900B8F1B4 /* LICENSE.md */,
+				250E7E9A17F3865900B8F1B4 /* README.md */,
 				250E7E7517F384F100B8F1B4 /* Images.xcassets */,
 				250E7E6417F384F100B8F1B4 /* Supporting Files */,
 			);
@@ -233,7 +239,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				250E7E9B17F3865900B8F1B4 /* LICENSE.md in Resources */,
 				250E7E7617F384F100B8F1B4 /* Images.xcassets in Resources */,
+				250E7E9C17F3865900B8F1B4 /* README.md in Resources */,
 				250E7E6817F384F100B8F1B4 /* InfoPlist.strings in Resources */,
 				250E7E7117F384F100B8F1B4 /* Main.storyboard in Resources */,
 			);

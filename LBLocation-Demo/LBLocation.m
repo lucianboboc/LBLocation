@@ -161,6 +161,8 @@
     NSLog(@"%@",error.localizedDescription);
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @"Error" message:[self getErrorMessageFromError: error] delegate: nil cancelButtonTitle: @"OK" otherButtonTitles: nil];
     [alert show];
+    if(self.locationBlock)
+        self.locationBlock(nil);
 }
 
 
