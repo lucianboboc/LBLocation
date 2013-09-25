@@ -6,10 +6,7 @@ LBLocation class will help you get the user location very easy and make forward 
  How to use LBLocation class into your project
 ==========
  
- 1. Import <code><CoreLocation/CoreLocation.h></code>, <code><MapKit/MapKit.h></code> and <code><AddressBookUI/AddressBookUI.h></code> frameworks.
- 2. Create the LBLocation object using <code>initWithLocationUpdateBlock:</code>.
-  
- The completionBlock will be called with the <code>CLLocation</code> value.
+ Import <code>CoreLocation, MapKit</code> and <code>AddressBookUI</code> frameworks.
  
  Create the LBLocation object using <code>initWithLocationUpdateBlock:</code>.
   
