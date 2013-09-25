@@ -7,9 +7,11 @@
 //
 
 #import "ViewController.h"
+#import "LBLocation.h"
 
 @interface ViewController ()
-
+@property (strong, nonatomic) LBLocation *location;
+@property (strong, nonatomic) CLLocation *myLocation;
 @end
 
 @implementation ViewController
@@ -17,7 +19,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    __weak ViewController *weakSelf = self;
+    self.location = [[LBLocation alloc] initWithLocationUpdateBlock:^(CLLocation *location) {
+        weakSelf.myLocation = location;
+    }];
 }
 
 - (void)didReceiveMemoryWarning
