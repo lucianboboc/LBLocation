@@ -57,7 +57,8 @@ typedef void(^ReverseGeocodeBlock)(CLPlacemark *placemark);
 /****** For more info see the "Address Property" constants in ABPerson Reference ******/
 - (void) geocodeAddressDictionary: (NSDictionary *) dictionary completionBlock: (LocationBlock) locationBlock;
 
-
+// call this method to validate coordinates before setting a region, if coordinates are not valid the app will crash
++ (BOOL) validCoordinates: (CLLocationCoordinate2D) coordinates;
 
 
 @end

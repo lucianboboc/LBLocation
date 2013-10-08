@@ -427,4 +427,24 @@
     }];
 }
 
+
+
+
+#pragma mark - validate coordinates
+
++ (BOOL) validCoordinates: (CLLocationCoordinate2D) coordinates
+{
+    if(coordinates.latitude >= -90 && coordinates.latitude <= 90)
+    {
+        if(coordinates.longitude >= -180 && coordinates.longitude <= 180)
+            return YES;
+        else
+            return NO;
+    }
+    else
+        return NO;
+}
+
+
+
 @end
