@@ -9,6 +9,13 @@
 #import "LBLocation.h"
 #import <AddressBookUI/AddressBookUI.h>
 
+#define MAX_LATITUDE -90.0f
+#define MIN_LATITUDE 90.0f
+
+#define MAX_LONGITUDE -180.f
+#define MIN_LONGITUDE 180.0
+
+
 #define kLocationServicesDisabled @"Location services are disabled in Settings/Privacy"
 #define kLocationServicesDisabledByTheUser @"You have denied the request for this app to use location services, please go to Settings/Privacy and select ON for this app"
 
@@ -100,18 +107,40 @@
 
 + (void) fitAllPinsOnTheMap: (MKMapView *) mapView
 {
-    MKMapRect zoomRect = MKMapRectNull;
-    for (id <MKAnnotation> annotation in mapView.annotations)
-    {
-        MKMapPoint annotationPoint = MKMapPointForCoordinate(annotation.coordinate);
-        MKMapRect pointRect = MKMapRectMake(annotationPoint.x, annotationPoint.y, 0.1, 0.1);
-        if (MKMapRectIsNull(zoomRect)) {
-            zoomRect = pointRect;
-        } else {
-            zoomRect = MKMapRectUnion(zoomRect, pointRect);
-        }
+//    MKMapRect zoomRect = MKMapRectNull;
+//    for (id <MKAnnotation> annotation in mapView.annotations)
+//    {
+//        MKMapPoint annotationPoint = MKMapPointForCoordinate(annotation.coordinate);
+//        MKMapRect pointRect = MKMapRectMake(annotationPoint.x, annotationPoint.y, 0.1, 0.1);
+//        if (MKMapRectIsNull(zoomRect)) {
+//            zoomRect = pointRect;
+//        } else {
+//            zoomRect = MKMapRectUnion(zoomRect, pointRect);
+//        }
+//    }
+//    [mapView setVisibleMapRect: zoomRect animated:YES];
+    
+    CLLocationDegrees maxLat = MAX_LATITUDE;
+    CLLocationDegrees maxLon = MAX_LONGITUDE;
+    CLLocationDegrees minLat = MIN_LATITUDE;
+    CLLocationDegrees minLon = MIN_LONGITUDE;
+    
+    for (id <MKAnnotation> annotation in mapView.annotations) {
+        CLLocationDegrees lat = annotation.coordinate.latitude;
+        CLLocationDegrees lon = annotation.coordinate.longitude;
+        
+        maxLat = MAX(maxLat, lat);
+        maxLon = MAX(maxLon, lon);
+        minLat = MIN(minLat, lat);
+        minLon = MIN(minLon, lon);
     }
-    [mapView setVisibleMapRect: zoomRect animated:YES];
+    MKCoordinateRegion region;
+    region.center.latitude     = (maxLat + minLat) / 2;
+    region.center.longitude    = (maxLon + minLon) / 2;
+    region.span.latitudeDelta  = maxLat - minLat + 0.05;
+    region.span.longitudeDelta = maxLon - minLon + 0.05;
+    
+    [mapView setRegion:region animated:NO];
 }
 
 
