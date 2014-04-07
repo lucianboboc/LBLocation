@@ -107,19 +107,6 @@
 
 + (void) fitAllPinsOnTheMap: (MKMapView *) mapView
 {
-//    MKMapRect zoomRect = MKMapRectNull;
-//    for (id <MKAnnotation> annotation in mapView.annotations)
-//    {
-//        MKMapPoint annotationPoint = MKMapPointForCoordinate(annotation.coordinate);
-//        MKMapRect pointRect = MKMapRectMake(annotationPoint.x, annotationPoint.y, 0.1, 0.1);
-//        if (MKMapRectIsNull(zoomRect)) {
-//            zoomRect = pointRect;
-//        } else {
-//            zoomRect = MKMapRectUnion(zoomRect, pointRect);
-//        }
-//    }
-//    [mapView setVisibleMapRect: zoomRect animated:YES];
-    
     CLLocationDegrees maxLat = MAX_LATITUDE;
     CLLocationDegrees maxLon = MAX_LONGITUDE;
     CLLocationDegrees minLat = MIN_LATITUDE;
